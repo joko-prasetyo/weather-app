@@ -6,6 +6,8 @@ const forecast = require('./utils/forecast')
 const hbs = require('hbs')
 const app = express()
 
+//Setting up the port enviroment
+const PORT = process.env.PORT || 3000
 
 // Define paths for views
 const dir = path.join(__dirname, '../public')
@@ -89,6 +91,6 @@ app.get('*', (req, res) => {
 
 
 // Open the server on port 3000
-app.listen(3000, () => {
-    console.log('Listening on port 3000.')
+app.listen(PORT, () => {
+    console.log('Listening on port ' + PORT)
 })
