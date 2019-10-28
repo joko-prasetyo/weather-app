@@ -8,7 +8,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error){
             callback("No match location found", undefined);
         } else {
-            callback(undefined, `${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees out. There's ${body.currently.precipProbability}% chance of rain.`)
+            callback(undefined, `${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees out with approximately the highest and lowest temperature are ${body.daily.data[0].temperatureHigh} and ${body.daily.data[0].temperatureLow} degrees. There's ${body.currently.precipProbability}% chance of rain.`)
         }
     })
 }
